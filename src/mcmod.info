@@ -1,0 +1,13 @@
+[
+{
+  "modid": "MOTD",
+  "name": "Message of the Day",
+  "description": "",
+  "version": "1.0",
+  "updateUrl": "",
+  "authors": [
+    "Emris_Morath"
+  ],
+
+}
+]
