@@ -1,4 +1,4 @@
-/*
+/**
  *  Copyright (C) 2013  emris
  *  https://github.com/emris/MOTD
  *
@@ -26,7 +26,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid="Motd", name="Message of the Day", version="1.2")
+@Mod(modid="motd", name="Message of the Day", version="1.2")
 @NetworkMod(clientSideRequired=false, serverSideRequired=false)
 public class Motd {
 
