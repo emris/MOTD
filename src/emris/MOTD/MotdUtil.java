@@ -15,7 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package emris.mods.MOTD;
+package emris.MOTD;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,6 +26,7 @@ import java.util.Date;
 
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.ChatMessageComponent;
 
 public class MotdUtil {
 
@@ -38,16 +39,16 @@ public class MotdUtil {
 			String onlinePlayers = "" + player.worldObj.playerEntities.size();
 			
 			for (int l = 0; l < msgList.size(); l++) {
-				player.sendChatToPlayer(
+				player.sendChatToPlayer(ChatMessageComponent.createFromText(
 					msgList.get(l)
 						.replaceAll("&", ChatFormatCodes.CODE.toString())
 						.replaceAll("%playername%", player.username)
 						.replaceAll("%players%", onlinePlayers)
-						.replaceAll("%time%", now.toString()));
+						.replaceAll("%time%", now.toString())));
 			}
 		} else {
 			for (int l = 0; l < msgList.size(); l++) {
-				sender.sendChatToPlayer(msgList.get(l));
+				sender.sendChatToPlayer(ChatMessageComponent.createFromText(msgList.get(l)));
 			}
 
 		}

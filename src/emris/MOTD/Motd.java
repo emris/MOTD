@@ -15,43 +15,35 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package emris.mods.MOTD;
+package emris.MOTD;
 
-import net.minecraft.command.ICommandManager;
-import net.minecraft.command.ServerCommandManager;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.src.ModLoader;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PreInit;
-import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import emris.mods.BlockNameTFC.CommandBn;
 
-@Mod(modid="Motd", name="Message of the Day", version="1.1")
+@Mod(modid="Motd", name="Message of the Day", version="1.2")
 @NetworkMod(clientSideRequired=false, serverSideRequired=false)
 public class Motd {
 
 	@Instance("Motd")
 	public static Motd instance;
 	
-	@PreInit
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		MotdUtil.loadFile();
 	}
 	
-	@Init
+	@EventHandler
 	public void load(FMLInitializationEvent event){
 
 	}
 	
-	@ServerStarting
+	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event) {
 		// CommandBn can be changed into any name, as long as it is the same
 		// as the name of the class that contains the code for your command.

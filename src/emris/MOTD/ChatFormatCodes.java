@@ -1,4 +1,4 @@
-package emris.mods.MOTD;
+package emris.MOTD;
 
 public enum ChatFormatCodes
 	{
